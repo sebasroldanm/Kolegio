@@ -1,0 +1,11 @@
+﻿#jumbo {
+    /* IE8 and below */
+    background: rgb(210, 231, 255);
+    /* all other browsers */
+    background: rgba(210, 231, 225, 0.7);
+}
+
+#white {
+    background: rgb(255, 255, 255);
+}
+

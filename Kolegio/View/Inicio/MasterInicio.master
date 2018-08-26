@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/Inicio/MasterInicio.master.cs" Inherits="View_Inicio_MasterInicio" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Plataforma Institucional</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="../../Bootstrap/css2/bootstrap.css" rel="stylesheet" />
+    <link href="../../Bootstrap/css2/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../../Bootstrap/js2/bootstrap.js" type="text/javascript"></script>
+    <link href="../../Bootstrap/Mio/contactenos.css" rel="stylesheet" />
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <link href="../../Bootstrap/Calendario/css/datepicker.css" rel="stylesheet" />
+    <script src="../../Bootstrap/Calendario/js/bootstrap-datepicker.js"></script>
+    <link href="../../Bootstrap/Calendario/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="../../Bootstrap/Calendario/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="../../Bootstrap/css2/bootstrap.css" rel="stylesheet" />
+    <link href="../../Bootstrap/css2/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../../Bootstrap/js2/bootstrap.js" type="text/javascript"></script>
+    <link href="../../Bootstrap/Mio/fondoprofesor.css" rel="stylesheet" />
+    <link href="../../Bootstrap/Mio/submenumaster.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="../../Bootstrap/Mio/jumbo.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+    <img id="fondo" src="../../Imagenes/nf2.jpg" alt="background image" />
+    <nav class=" navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand" href="InicioNosotros.aspx">
+                    <img src="../../Imagenes/logonav.png" alt="logo" style="width: 100px;">
+                    <a class="navbar-brand" href="InicioNosotros.aspx"></a>
+                </a>
+                <ul class="nav navbar-nav">
+
+                    <li><a href="InicioNosotros.aspx">Nosotros</a></li>
+                    <li><a href="InicioMision.aspx">Mision</a></li>
+                    <li><a href="InicioVision.aspx">Vision</a></li>
+                    <li><a href="InicioContactenos.aspx">Contactenos</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../Loggin.aspx">Iniciar Sesion</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+                <!-- /ACA VA EL CONTENIDO DE LAS PAGINAS -->
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+
+</html>
