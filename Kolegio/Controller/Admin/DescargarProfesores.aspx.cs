@@ -13,23 +13,23 @@ public partial class View_Admin_DescargarProfesores : System.Web.UI.Page
     {
 
 
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-        //    try
-        //    {
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
+            try
+            {
                 InfReporte reporte = ObtenerInforme();
                 CRS_listaProfesor.ReportDocument.SetDataSource(reporte);
                 CrystalReportViewer1.ReportSource = CRS_listaProfesor;
-        //    }
-        //    catch (Exception)
-        //    {
+            }
+            catch (Exception)
+            {
 
-        //        throw;
-        //    }
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+                throw;
+            }
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
 
     }
 

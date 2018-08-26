@@ -10,21 +10,21 @@ public partial class View_Admin_EditarEliminarAdministrador : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-        //    tb_AministradorAdministradorId.Text = (string)Session["documento"];
-        //    tb_AdministradorAdministradorNombre.ReadOnly = true;
-        //    tb_AdministradorAdministradorApellido.ReadOnly = true;
-        //    tb_AdministradorAdministradorCorreo.ReadOnly = true;
-        //    tb_AdministradorAdministradorDireccion.ReadOnly = true;
-        //    tb_AdministradorTelefono.ReadOnly = true;
-        //    tb_AdministradorUsuario.ReadOnly = true;
-        //    tb_AdministradorContrasenia.ReadOnly = true;
-            //fechanac.ReadOnly = true;     NO DESCOMENTAR
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
+            tb_AministradorAdministradorId.Text = (string)Session["documento"];
+            tb_AdministradorAdministradorNombre.ReadOnly = true;
+            tb_AdministradorAdministradorApellido.ReadOnly = true;
+            tb_AdministradorAdministradorCorreo.ReadOnly = true;
+            tb_AdministradorAdministradorDireccion.ReadOnly = true;
+            tb_AdministradorTelefono.ReadOnly = true;
+            tb_AdministradorUsuario.ReadOnly = true;
+            tb_AdministradorContrasenia.ReadOnly = true;
+            //fechanac.ReadOnly = true;
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
         
     }
 

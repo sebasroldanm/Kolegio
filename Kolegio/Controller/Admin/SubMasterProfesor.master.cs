@@ -9,12 +9,12 @@ public partial class View_Admin_SubMasterProfesor : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-        //    Console.WriteLine("");
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
+            Console.WriteLine("");
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
     }
 }

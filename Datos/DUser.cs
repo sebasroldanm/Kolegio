@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Configuration;
-using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Utilitarios;
 using Npgsql;
 using NpgsqlTypes;
-using Utilitarios;
+using System.Data;
+using System.Configuration;
 
 namespace Datos
 {
     public class DUser
     {
-        //** LOGIN - RECUPERAR CONTRASENIA  ** LOGIN - RECUPERAR CONTRASENIA** LOGIN - RECUPERAR CONTRASENIA** LOGIN - RECUPERAR CONTRASENIA
-
         public DataTable loggin(UUser enc)
         {
             DataTable Usuario = new DataTable();
@@ -181,7 +183,7 @@ namespace Datos
                 dataAdapter.SelectCommand.Parameters.Add("_telefono", NpgsqlDbType.Varchar, 100).Value = dat.Telefono;
                 dataAdapter.SelectCommand.Parameters.Add("_num_documento", NpgsqlDbType.Integer).Value = dat.Documento;
                 dataAdapter.SelectCommand.Parameters.Add("_foto_usua", NpgsqlDbType.Varchar, 100).Value = dat.Foto;
-                dataAdapter.SelectCommand.Parameters.Add("_fecha_nac", NpgsqlDbType.Varchar, 100).Value = dat.Fecha_nacimiento;
+                dataAdapter.SelectCommand.Parameters.Add("_fecha_nac", NpgsqlDbType.Varchar, 100).Value = dat.fecha_nacimiento;
                 dataAdapter.SelectCommand.Parameters.Add("_dep_nacimiento", NpgsqlDbType.Integer).Value = dat.Departamento;
                 dataAdapter.SelectCommand.Parameters.Add("_ciu_nacimiento", NpgsqlDbType.Integer).Value = dat.Ciudad;
                 dataAdapter.SelectCommand.Parameters.Add("_session", NpgsqlDbType.Text).Value = dat.Session;
@@ -347,7 +349,7 @@ namespace Datos
                 dataAdapter.SelectCommand.Parameters.Add("_telefono", NpgsqlDbType.Varchar, 100).Value = datos.Telefono;
                 dataAdapter.SelectCommand.Parameters.Add("_num_documento", NpgsqlDbType.Integer).Value = datos.Documento;
                 dataAdapter.SelectCommand.Parameters.Add("_foto_usua", NpgsqlDbType.Varchar, 100).Value = datos.Foto;
-                dataAdapter.SelectCommand.Parameters.Add("_fecha_nac", NpgsqlDbType.Varchar, 100).Value = datos.Fecha_nacimiento;
+                dataAdapter.SelectCommand.Parameters.Add("_fecha_nac", NpgsqlDbType.Varchar, 100).Value = datos.fecha_nacimiento;
                 dataAdapter.SelectCommand.Parameters.Add("_dep_nacimiento", NpgsqlDbType.Integer).Value = datos.Departamento;
                 dataAdapter.SelectCommand.Parameters.Add("_ciu_nacimiento", NpgsqlDbType.Integer).Value = datos.Ciudad;
                 dataAdapter.SelectCommand.Parameters.Add("_session", NpgsqlDbType.Text).Value = datos.Session;
@@ -434,8 +436,8 @@ namespace Datos
                 dataAdapter.SelectCommand.Parameters.Add("_telefono", NpgsqlDbType.Varchar, 100).Value = dat.Telefono;
                 dataAdapter.SelectCommand.Parameters.Add("_num_documento", NpgsqlDbType.Integer).Value = dat.Documento;
                 dataAdapter.SelectCommand.Parameters.Add("_foto_usua", NpgsqlDbType.Varchar, 100).Value = dat.Foto;
-                dataAdapter.SelectCommand.Parameters.Add("_id_acudiente", NpgsqlDbType.Integer).Value = dat.Id_Acudiente;
-                dataAdapter.SelectCommand.Parameters.Add("_fecha_nac", NpgsqlDbType.Varchar, 100).Value = dat.Fecha_nacimiento;
+                dataAdapter.SelectCommand.Parameters.Add("_id_acudiente", NpgsqlDbType.Integer).Value = dat.id_Acudiente;
+                dataAdapter.SelectCommand.Parameters.Add("_fecha_nac", NpgsqlDbType.Varchar, 100).Value = dat.fecha_nacimiento;
                 dataAdapter.SelectCommand.Parameters.Add("_dep_nacimiento", NpgsqlDbType.Integer).Value = dat.Departamento;
                 dataAdapter.SelectCommand.Parameters.Add("_ciu_nacimiento", NpgsqlDbType.Integer).Value = dat.Ciudad;
 
@@ -2245,8 +2247,5 @@ namespace Datos
             return Administrador;
         }
 
-
-
     }
 }
-

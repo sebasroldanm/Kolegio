@@ -8,6 +8,29 @@ namespace Utilitarios
 {
     public class UUser
     {
+        //
+        // Normal
+        //
+        private String url;
+        private Int32 userId;
+        private Int32 rolId;
+        private String mensaje;
+        //
+
+        //
+        // Session
+        //
+        private String sUserId;
+        private String sUserName;
+        private String sNombre;
+        private String sApellido;
+        private String sClave;
+        private String sCorreo;
+        private String sDocumento;
+        private String sFoto;
+
+        //
+
         private String userName;
         private String clave;
         private String rol;
@@ -22,12 +45,12 @@ namespace Utilitarios
         private String foto;
         private String id_estudiante;
         private String estado;
-        private String session;
-        private String ip;
-        private String mac;
-        private String id_Acudiente;
-        private String fecha_nacimiento;
-        private String userName1;
+        private string session;
+        private string ip;
+        private string mac;
+        private string Id_Acudiente;
+        private string Fecha_nacimiento;
+        //public string UserName;
         private String observacion;
         private String materia;
         private String dia_materia;
@@ -42,9 +65,9 @@ namespace Utilitarios
         private String nota2;
         private String nota3;
         private String notadef;
-        private String inicio;
-        private String mision;
-        private String vision;
+        private string inicio;
+        private string mision;
+        private string vision;
 
         public string UserName { get => userName; set => userName = value; }
         public string Clave { get => clave; set => clave = value; }
@@ -63,9 +86,8 @@ namespace Utilitarios
         public string Session { get => session; set => session = value; }
         public string Ip { get => ip; set => ip = value; }
         public string Mac { get => mac; set => mac = value; }
-        public string Id_Acudiente { get => id_Acudiente; set => id_Acudiente = value; }
-        public string Fecha_nacimiento { get => fecha_nacimiento; set => fecha_nacimiento = value; }
-        public string UserName1 { get => userName1; set => userName1 = value; }
+        public string id_Acudiente { get => Id_Acudiente; set => Id_Acudiente = value; }
+        public string fecha_nacimiento { get => Fecha_nacimiento; set => Fecha_nacimiento = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public string Materia { get => materia; set => materia = value; }
         public string Dia_materia { get => dia_materia; set => dia_materia = value; }
@@ -83,5 +105,22 @@ namespace Utilitarios
         public string Inicio { get => inicio; set => inicio = value; }
         public string Mision { get => mision; set => mision = value; }
         public string Vision { get => vision; set => vision = value; }
+
+
+
+        public string Url { get => url; set => url = value; }
+        public int UserId { get => userId; set => userId = value; }
+        public int RolId { get => rolId; set => rolId = value; }
+        public string Mensaje { get => mensaje; set => mensaje = value; }
+
+
+        public string SUserId { get => sUserId; set => sUserId = value; }
+        public string SUserName { get => sUserName; set => sUserName = value; }
+        public string SNombre { get => sNombre; set => sNombre = value; }
+        public string SApellido { get => sApellido; set => sApellido = value; }
+        public string SClave { get => sClave; set => sClave = value; }
+        public string SCorreo { get => sCorreo; set => sCorreo = value; }
+        public string SDocumento { get => sDocumento; set => sDocumento = value; }
+        public string SFoto { get => sFoto; set => sFoto = value; }
     }
 }

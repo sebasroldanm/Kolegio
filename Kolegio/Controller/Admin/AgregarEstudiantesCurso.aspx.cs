@@ -11,12 +11,12 @@ public partial class View_Admin_AgregarEstudiantesCurso : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-        //    Console.WriteLine("");
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+        if (Session["userId"] != null)
+        {
+            Console.WriteLine("");
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

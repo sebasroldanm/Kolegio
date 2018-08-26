@@ -10,23 +10,23 @@ public partial class View_Admin_DescargarAcudientes : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-        //    try
-        //    {
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
+            try
+            {
                 InfReporte reporte = ObtenerInforme();
                 CRS_acudientes.ReportDocument.SetDataSource(reporte);
                 CrystalReportViewer1.ReportSource = CRS_acudientes;
-        //    }
-        //    catch (Exception)
-        //    {
+            }
+            catch (Exception)
+            {
 
-        //        throw;
-        //    }
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+                throw;
+            }
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
 
 
     }

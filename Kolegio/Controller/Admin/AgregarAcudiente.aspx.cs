@@ -10,18 +10,18 @@ public partial class View_Admin_AgregarAcudiente : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-            //fechanac.ReadOnly = true;         NO DESCOMENTAR
-            //btnigm_calendar.Visible = false;  NO DESCOMENTAR
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
+            //fechanac.ReadOnly = true;
+            //btnigm_calendar.Visible = false;
             int year;
             year = int.Parse(DateTime.Now.ToString("yyyy"));
             year = year - 18;
             CalendarExtender1.EndDate = Convert.ToDateTime("31/12/" + year);
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
 
 
     }

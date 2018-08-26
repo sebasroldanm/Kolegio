@@ -10,14 +10,14 @@ public partial class View_Admin_AgregarProfesor : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-        //    //fechanac.ReadOnly = true;         NO DESCOMENTAR
-        //    //btnigm_calendar.Visible = false;  NO DESCOMENTAR
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
+            //fechanac.ReadOnly = true;
+            //btnigm_calendar.Visible = false;
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
         
     }
 

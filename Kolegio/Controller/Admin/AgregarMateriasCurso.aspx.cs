@@ -10,13 +10,13 @@ public partial class View_Admin_AgregarMateriasCurso : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
             horario();
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
         
         //  string id = ddt_curso.SelectedValue.ToString();
 

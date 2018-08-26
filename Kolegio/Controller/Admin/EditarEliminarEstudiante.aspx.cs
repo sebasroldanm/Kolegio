@@ -10,22 +10,22 @@ public partial class View_Admin_EditarEliminarEstudiante : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-        //    tb_EstudianteId.Text = (string)Session["documentoe"];
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
+            tb_EstudianteId.Text = (string)Session["documentoe"];
 
-        //    tb_EstudianteNombre.ReadOnly = true;
-        //    tb_EstudianteApellido.ReadOnly = true;
-        //    tb_EstudianteCorreo.ReadOnly = true;
-        //    tb_EstudianteDireccion.ReadOnly = true;
-        //    tb_EstudianteTelefono.ReadOnly = true;
-        //    tb_EstudianteUsuario.ReadOnly = true;
-        //    tb_EstudianteContrasenia.ReadOnly = true;
-            //fechanac.ReadOnly = true;     NO DESCOMENTAR
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+            tb_EstudianteNombre.ReadOnly = true;
+            tb_EstudianteApellido.ReadOnly = true;
+            tb_EstudianteCorreo.ReadOnly = true;
+            tb_EstudianteDireccion.ReadOnly = true;
+            tb_EstudianteTelefono.ReadOnly = true;
+            tb_EstudianteUsuario.ReadOnly = true;
+            tb_EstudianteContrasenia.ReadOnly = true;
+            //fechanac.ReadOnly = true;
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
 
         
 

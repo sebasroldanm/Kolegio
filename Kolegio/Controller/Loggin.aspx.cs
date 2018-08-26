@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.Data;
 using Utilitarios;
-using Logica;
 using Datos;
+using Logica;
 
 
 public partial class Loggin : System.Web.UI.Page
@@ -15,68 +20,27 @@ public partial class Loggin : System.Web.UI.Page
 
     protected void BT_Ingresar_Click(object sender, EventArgs e)
     {
-        UUser encapsular = new UUser();
-        DUser datos = new DUser();
+        UUser datos = new UUser();
+        LUser logic = new LUser();
 
-        encapsular.UserName = TB_UserName.Text.ToString();
-        encapsular.Clave = TB_Clave.Text.ToString();
-        //DataTable 
-        DataTable resultado = datos.loggin(encapsular);
+        datos = logic.loggear(TB_UserName.Text, TB_Clave.Text);
 
-        if (resultado.Rows.Count > 0)
+        Session["userId"] = datos.SUserId;
+        Session["userName"] = datos.SUserName;
+        Session["nombre"] = datos.SNombre;
+        Session["apellido"] = datos.SApellido;
+        Session["clave"] = datos.SClave;
+        Session["correo"] = datos.SCorreo;
+        Session["documento"] = datos.SDocumento;
+        Session["foto"] = datos.SFoto;
+
+        if (datos.Url == null)
         {
-            //Session["userId"] = resultado.Rows[0]["id_usua"].ToString();
-            //Session["userName"] = resultado.Rows[0]["user_name"].ToString();
-            //Session["nombre"] = resultado.Rows[0]["nombre_usua"].ToString();
-            //Session["apellido"] = resultado.Rows[0]["apellido_usua"].ToString();
-            //Session["clave"] = resultado.Rows[0]["clave"].ToString();
-            //Session["correo"] = resultado.Rows[0]["correo"].ToString();
-            //Session["documento"] = resultado.Rows[0]["num_documento"].ToString();
-            //Session["foto"] = resultado.Rows[0]["foto_usua"].ToString();
-            //Response.Redirect("Administrador/AdministradorAdministrador.aspx");
-
-            //EDatos datos2 = new EDatos();
-            //DataTable data = new DataTable();
-            //data.Columns.Add("nombre");
-            //data.Columns.Add("userName");
-            if ((resultado.Rows[0]["estado"].ToString()) == "True")
-            {
-                switch (int.Parse(resultado.Rows[0]["rol_id"].ToString()))
-                {
-                    case 1:
-                        Session["nombre"] = resultado.Rows[0]["nombre_usua"].ToString();
-                        Console.WriteLine("Hola");
-                        Response.Redirect("Admin/AgregarAdministrador.aspx");
-                        break;
-
-                    case 2:
-                        Response.Redirect("Profesor/ProfesorSubirNota.aspx");
-                        break;
-
-                    case 3:
-                        Response.Redirect("Estudiante/EstudianteHorario.aspx");
-                        break;
-
-                    case 4:
-                        Response.Redirect("Acudiente/AcudienteBoletin.aspx");
-                        break;
-
-                    default:
-                        Response.Redirect("Loggin.aspx");
-                        break;
-                }
-
-            }
-            else
-            {
-                L_Error.Text = "Usuario Se Encuentra Inactivo";
-                Session["userId"] = null;
-            }
+            L_Error.Text = datos.Mensaje;
         }
         else
         {
-            L_Error.Text = "Usuario Y/o Clave Incorrecto";
-            Session["userId"] = null;
+            Response.Redirect(datos.Url);
         }
     }
 

@@ -13,18 +13,23 @@ public partial class View_Admin_AgregarAdministrador : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Response.Cache.SetNoStore();
-        //if (Session["userId"] != null)
-        //{
-        //    //fechanac.ReadOnly = true;
-        //    //btnigm_calendar.Visible = false;
-        int year;
-        year = int.Parse(DateTime.Now.ToString("yyyy"));
-        year = year - 18;
-        CalendarExtender1.EndDate = Convert.ToDateTime("31/12/" + year);
-        //}
-        //else
-        //    Response.Redirect("AccesoDenegado.aspx");
+        Response.Cache.SetNoStore();
+        if (Session["userId"] != null)
+        {
+            //fechanac.ReadOnly = true;
+            //btnigm_calendar.Visible = false;va
+            int year;
+            year = int.Parse(DateTime.Now.ToString("yyyy"));
+            year = year - 18;
+            CalendarExtender1.EndDate = Convert.ToDateTime("31/12/" + year);
+        }
+        else
+            Response.Redirect("AccesoDenegado.aspx");
+
+
+
+
+
     }
 
     protected void btn_AdministradorAceptar_Click2(object sender, EventArgs e)
